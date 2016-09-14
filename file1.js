@@ -58,6 +58,11 @@ function ReturnSquaredValue(x) {
 console.log(ReturnSquaredValue());
 
 ////////////////////////////////////////////////////////////////////////
+//string interpolation in ES6 is done w/ Template literals are enclosed by the back-tick (` `) (grave accent) character instead of double or single quotes
+console.log(`This is string interpolation ${testArray}.`);
+
+
+////////////////////////////////////////////////////////////////////////
 /*
 Arguments are Passed by Value
 The parameters, in a function call, are the function's arguments.
@@ -112,3 +117,33 @@ function AddMe(x, y) {
 var result = AddMe(5);
 if (isNaN(result))
     console.log("When adding numbers, if one operand is not specified or undefined, the result is NaN");
+
+/////////////////////////////////////////////////////////////////////////
+//Rest parameter syntax allows us to represent an indefinite number of arguments as an array.
+function myArrayFunction(item, arrayIndex, array) {
+    console.log('array[' + arrayIndex + '] = ' + item);
+    console.log(`item ${(arrayIndex + 1)} of ${array.length}`);
+}
+
+function HandleRestParameters(...args) 
+{
+    if(args.length > 0) {
+        args.forEach(myArrayFunction);
+    } 
+}
+
+HandleRestParameters(1,2,3,4,5);
+HandleRestParameters(1,2,3);
+
+function AddAllParameters(...args) 
+{
+    var totalAmts = 0;
+    if(args.length > 0) {
+        args.forEach(function(value) {
+                totalAmts += value;
+            });
+    } 
+    return totalAmts;
+}
+
+console.log(AddAllParameters(1,2,3));
