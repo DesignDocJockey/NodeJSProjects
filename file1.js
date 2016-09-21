@@ -53,8 +53,6 @@ function ReturnSquaredValue(x) {
     if (arguments.length !== 0)
         return x * x;
 } 
-
-
 console.log(ReturnSquaredValue());
 
 ////////////////////////////////////////////////////////////////////////
